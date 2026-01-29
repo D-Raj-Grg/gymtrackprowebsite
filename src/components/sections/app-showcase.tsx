@@ -146,19 +146,19 @@ export function AppShowcase() {
 
         {/* Mobile + Tablet: Horizontal scroll */}
         <div className="lg:hidden">
-          <div className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
+          <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6">
             {screens.map((screen, index) => (
               <BlurFade key={screen.title} delay={0.1 * index}>
                 <motion.div
                   whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="snap-center shrink-0 flex flex-col items-center gap-3"
+                  className="snap-center shrink-0 flex flex-col items-center gap-3 w-[70vw] max-w-[300px] sm:w-[280px]"
                 >
                   <Iphone
-                    className="w-[260px] sm:w-[280px] drop-shadow-xl"
+                    className="w-full drop-shadow-xl"
                     src={screen.src}
                   />
-                  <div className="text-center max-w-[260px] sm:max-w-[280px]">
+                  <div className="text-center">
                     <p className="text-sm font-semibold text-gym-text">
                       {screen.title}
                     </p>
