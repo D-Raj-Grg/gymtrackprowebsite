@@ -37,6 +37,15 @@ const screens = [
   },
 ];
 
+// Fan layout config: [rotate, translateY, scale, zIndex] per position from center
+const fanPositions = [
+  { rotate: -12, translateY: 40, scale: 0.85, zIndex: 1 },
+  { rotate: -6, translateY: 14, scale: 0.92, zIndex: 2 },
+  { rotate: 0, translateY: 0, scale: 1, zIndex: 3 },
+  { rotate: 6, translateY: 14, scale: 0.92, zIndex: 2 },
+  { rotate: 12, translateY: 40, scale: 0.85, zIndex: 1 },
+];
+
 export function AppShowcase() {
   return (
     <section aria-label="App screen showcase" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
@@ -63,20 +72,66 @@ export function AppShowcase() {
           </BlurFade>
         </div>
 
-        {/* Horizontal scroll of phone screens */}
-        <div className="flex gap-4 sm:gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 lg:justify-center lg:flex-wrap">
-          {screens.map((screen, index) => (
-            <BlurFade key={screen.title} delay={0.1 * index}>
-              <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="snap-center shrink-0 flex flex-col items-center gap-3 sm:gap-4"
-              >
-                <Iphone
-                  className="w-[160px] sm:w-[200px] md:w-[220px]"
-                  src={screen.src}
-                />
-                <div className="text-center max-w-[160px] sm:max-w-[200px]">
+        {/* Desktop: Fan layout */}
+        <div className="hidden md:block">
+          <div className="relative flex items-end justify-center gap-[-20px] pt-12 pb-8">
+            {/* Glow behind center phone */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[500px] bg-gradient-to-r from-gym-primary/20 via-gym-primary-light/15 to-gym-accent/20 blur-[100px] rounded-full" />
+
+            <div className="relative flex items-end justify-center">
+              {screens.map((screen, index) => {
+                const pos = fanPositions[index];
+                return (
+                  <BlurFade key={screen.title} delay={0.08 * index}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 60, rotate: 0 }}
+                      whileInView={{ opacity: 1, y: 0, rotate: pos.rotate }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{
+                        delay: 0.1 * index,
+                        duration: 0.6,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 20,
+                      }}
+                      whileHover={{
+                        scale: pos.scale + 0.05,
+                        rotate: pos.rotate * 0.5,
+                        y: -12,
+                        transition: { duration: 0.3, type: "spring", stiffness: 300 },
+                      }}
+                      className="relative group cursor-pointer"
+                      style={{
+                        zIndex: pos.zIndex,
+                        transform: `rotate(${pos.rotate}deg) translateY(${pos.translateY}px) scale(${pos.scale})`,
+                        marginLeft: index === 0 ? 0 : "-28px",
+                      }}
+                    >
+                      <Iphone
+                        className={`${index === 2 ? "w-[220px] lg:w-[240px]" : "w-[190px] lg:w-[210px]"} drop-shadow-2xl`}
+                        src={screen.src}
+                      />
+                      {/* Label on hover */}
+                      <div className="absolute -bottom-14 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-center whitespace-nowrap">
+                        <p className="text-sm font-semibold text-gym-text">
+                          {screen.title}
+                        </p>
+                        <p className="text-xs text-gym-text-muted mt-0.5">
+                          {screen.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </BlurFade>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Screen labels below the fan */}
+          <div className="flex justify-center gap-8 lg:gap-12 mt-16">
+            {screens.map((screen, index) => (
+              <BlurFade key={`label-${screen.title}`} delay={0.3 + 0.05 * index}>
+                <div className="text-center max-w-[140px]">
                   <p className="text-sm font-semibold text-gym-text">
                     {screen.title}
                   </p>
@@ -84,9 +139,37 @@ export function AppShowcase() {
                     {screen.description}
                   </p>
                 </div>
-              </motion.div>
-            </BlurFade>
-          ))}
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile: Horizontal scroll */}
+        <div className="md:hidden">
+          <div className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
+            {screens.map((screen, index) => (
+              <BlurFade key={screen.title} delay={0.1 * index}>
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="snap-center shrink-0 flex flex-col items-center gap-3"
+                >
+                  <Iphone
+                    className="w-[180px] sm:w-[200px] drop-shadow-xl"
+                    src={screen.src}
+                  />
+                  <div className="text-center max-w-[180px] sm:max-w-[200px]">
+                    <p className="text-sm font-semibold text-gym-text">
+                      {screen.title}
+                    </p>
+                    <p className="text-xs text-gym-text-muted mt-1 leading-relaxed">
+                      {screen.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </BlurFade>
+            ))}
+          </div>
         </div>
       </div>
     </section>
