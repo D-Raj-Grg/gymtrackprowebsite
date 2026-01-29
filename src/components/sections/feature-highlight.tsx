@@ -1,7 +1,7 @@
 "use client";
 
 import { BlurFade } from "@/components/magicui/animated-beam";
-import { Iphone15Pro } from "@/components/magicui/iphone-15-pro";
+import { Iphone } from "@/components/magicui/iphone-15-pro";
 import { Button } from "@/components/ui/button";
 import {
   Timer,
@@ -110,8 +110,8 @@ export function FeatureHighlight() {
                         className={`absolute inset-0 rounded-full bg-gradient-to-r ${feature.accentGradient} blur-3xl`}
                       />
                     </div>
-                    <Iphone15Pro
-                      className="w-[260px] sm:w-[300px] lg:w-[340px] h-auto"
+                    <Iphone
+                      className="w-[260px] sm:w-[300px] lg:w-[340px]"
                       src={feature.src}
                     />
                   </div>
