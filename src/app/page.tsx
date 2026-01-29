@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/hero";
 import { FeatureScroll } from "@/components/sections/feature-scroll";
 import { BentoGrid } from "@/components/sections/bento-grid";
 import { FeatureHighlight } from "@/components/sections/feature-highlight";
+import { AppShowcase } from "@/components/sections/app-showcase";
 import { Benefits } from "@/components/sections/benefits";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Pricing } from "@/components/sections/pricing";
@@ -19,6 +20,7 @@ export default function Home() {
         <FeatureScroll />
         <BentoGrid />
         <FeatureHighlight />
+        <AppShowcase />
         <Benefits />
         <Testimonials />
         <Pricing />

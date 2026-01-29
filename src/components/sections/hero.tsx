@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PhoneMockup } from "@/components/magicui/phone-mockup";
 import { BlurFade } from "@/components/magicui/animated-beam";
@@ -90,7 +91,7 @@ export function Hero() {
             </BlurFade>
           </div>
 
-          {/* Right - Phone mockup with real app UI */}
+          {/* Right - Phone mockup with real app screenshot */}
           <BlurFade delay={0.3} className="flex justify-center lg:justify-end">
             <div className="relative">
               {/* Glow behind phone */}
@@ -99,72 +100,14 @@ export function Hero() {
               </div>
 
               <PhoneMockup>
-                {/* Mock Dashboard screen - matching real app */}
-                <div className="flex flex-col h-full bg-gym-background p-5 pt-10 text-gym-text">
-                  {/* Greeting */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div>
-                      <p className="text-xs text-gym-text-muted">
-                        Good morning
-                      </p>
-                      <p className="text-sm font-semibold">Welcome back!</p>
-                    </div>
-                    <div className="h-9 w-9 rounded-full bg-gradient-to-br from-gym-primary to-gym-accent flex items-center justify-center text-xs font-bold">
-                      GT
-                    </div>
-                  </div>
-
-                  {/* Streak card */}
-                  <div className="rounded-2xl bg-gradient-to-r from-gym-streak-start to-gym-streak-end p-4 mb-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-xs text-orange-100 mb-1">
-                          Current Streak
-                        </p>
-                        <p className="text-2xl font-bold">14 Days</p>
-                      </div>
-                      <Flame className="h-8 w-8 text-orange-100" />
-                    </div>
-                  </div>
-
-                  {/* Today&apos;s workout card */}
-                  <div className="rounded-2xl bg-gym-card border border-gym-border p-4 mb-4">
-                    <p className="text-xs text-gym-text-muted mb-1">
-                      Today&apos;s Workout
-                    </p>
-                    <p className="text-sm font-bold mb-2">Push Day (Chest, Shoulders, Triceps)</p>
-                    <div className="flex items-center gap-3 text-xs text-gym-text-muted">
-                      <span className="flex items-center gap-1">
-                        <Dumbbell className="h-3 w-3 text-gym-primary" /> 6
-                        exercises
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Timer className="h-3 w-3 text-gym-accent" /> ~45 min
-                      </span>
-                    </div>
-                    <div className="mt-3 rounded-lg bg-gradient-to-r from-gym-primary to-gym-primary-light py-2 text-center text-xs font-medium">
-                      Start Workout
-                    </div>
-                  </div>
-
-                  {/* Quick Stats */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-xl bg-gym-card border border-gym-border p-3">
-                      <TrendingUp className="h-4 w-4 text-gym-success mb-1" />
-                      <p className="text-lg font-bold font-mono">12.5k</p>
-                      <p className="text-[10px] text-gym-text-muted">
-                        Volume (lbs)
-                      </p>
-                    </div>
-                    <div className="rounded-xl bg-gym-card border border-gym-border p-3">
-                      <Trophy className="h-4 w-4 text-gym-warning mb-1" />
-                      <p className="text-lg font-bold font-mono">3</p>
-                      <p className="text-[10px] text-gym-text-muted">
-                        New PRs This Week
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src="/images/screens/dashboard.png"
+                  alt="GymTrack Pro Dashboard - showing workout streak, today's workout, and weekly stats"
+                  width={264}
+                  height={564}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </PhoneMockup>
 
               {/* Floating badges */}
@@ -176,7 +119,7 @@ export function Hero() {
               >
                 <TrendingUp className="h-4 w-4 text-gym-success" />
                 <span className="text-xs font-medium text-gym-text">
-                  +23% volume
+                  9.2k volume
                 </span>
               </motion.div>
 
@@ -188,7 +131,7 @@ export function Hero() {
               >
                 <Trophy className="h-4 w-4 text-gym-warning" />
                 <span className="text-xs font-medium text-gym-text">
-                  New PR! 225 lbs
+                  16 PRs tracked
                 </span>
               </motion.div>
             </div>
