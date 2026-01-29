@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { PhoneMockup } from "@/components/magicui/phone-mockup";
+import { Iphone } from "@/components/magicui/iphone-15-pro";
 import { BlurFade } from "@/components/magicui/animated-beam";
 import {
   ArrowRight,
@@ -99,16 +98,10 @@ export function Hero() {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-gym-primary/30 via-gym-primary-light/20 to-gym-accent/30 blur-3xl" />
               </div>
 
-              <PhoneMockup>
-                <Image
-                  src="/images/screens/dashboard.png"
-                  alt="GymTrack Pro Dashboard - showing workout streak, today's workout, and weekly stats"
-                  width={264}
-                  height={564}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </PhoneMockup>
+              <Iphone
+                className="w-[264px] sm:w-[300px]"
+                src="/images/screens/dashboard.png"
+              />
 
               {/* Floating badges */}
               <motion.div

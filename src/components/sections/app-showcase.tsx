@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { BlurFade } from "@/components/magicui/animated-beam";
-import { PhoneMockup } from "@/components/magicui/phone-mockup";
+import { Iphone } from "@/components/magicui/iphone-15-pro";
 import { motion } from "framer-motion";
 
 const screens = [
@@ -73,17 +72,10 @@ export function AppShowcase() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="snap-center shrink-0 flex flex-col items-center gap-4"
               >
-                <PhoneMockup className="w-[200px] h-[420px] sm:w-[220px] sm:h-[460px]">
-                  <Image
-                    src={screen.src}
-                    alt={screen.alt}
-                    width={220}
-                    height={460}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 200px, 220px"
-                  />
-                </PhoneMockup>
+                <Iphone
+                  className="w-[200px] sm:w-[220px]"
+                  src={screen.src}
+                />
                 <div className="text-center max-w-[200px]">
                   <p className="text-sm font-semibold text-gym-text">
                     {screen.title}
