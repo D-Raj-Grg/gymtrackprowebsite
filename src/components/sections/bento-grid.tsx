@@ -13,7 +13,7 @@ import {
 
 export function BentoGrid() {
   return (
-    <section id="how-it-works" className="relative py-24 sm:py-32 bg-gym-card/30">
+    <section id="how-it-works" className="relative py-16 sm:py-24 lg:py-32 bg-gym-card/30">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center mb-16">
           <BlurFade>
@@ -38,9 +38,9 @@ export function BentoGrid() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[180px] sm:auto-rows-[200px]">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[160px] sm:auto-rows-[200px]">
           {/* Large card - Volume Progress chart */}
-          <BlurFade delay={0.1} className="sm:col-span-2 row-span-2">
+          <BlurFade delay={0.1} className="sm:col-span-2 sm:row-span-2">
             <motion.div
               whileHover={{ scale: 1.01 }}
               className="h-full rounded-2xl border border-gym-border/50 bg-gym-card p-6 flex flex-col"

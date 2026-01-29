@@ -94,7 +94,7 @@ function FaqItem({
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative py-24 sm:py-32">
+    <section id="faq" className="relative py-16 sm:py-24 lg:py-32">
       <div className="container mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center mb-16">
           <BlurFade>

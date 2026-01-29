@@ -63,7 +63,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 sm:py-32">
+    <section id="testimonials" className="relative py-16 sm:py-24 lg:py-32">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center mb-16">
           <BlurFade>

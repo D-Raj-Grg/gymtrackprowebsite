@@ -6,7 +6,7 @@ import { ArrowRight, Dumbbell } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="download" aria-label="Download GymTrack Pro" className="relative py-24 sm:py-32 bg-gym-card/30">
+    <section id="download" aria-label="Download GymTrack Pro" className="relative py-16 sm:py-24 lg:py-32 bg-gym-card/30">
       <div className="container mx-auto max-w-4xl px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-3xl border border-gym-border/50 bg-gradient-to-br from-gym-primary via-gym-primary-light to-gym-accent p-8 sm:p-16 text-center text-white">
           {/* Background decoration */}
