@@ -155,10 +155,10 @@ export function AppShowcase() {
                   className="snap-center shrink-0 flex flex-col items-center gap-3"
                 >
                   <Iphone
-                    className="w-[220px] sm:w-[240px] drop-shadow-xl"
+                    className="w-[260px] sm:w-[280px] drop-shadow-xl"
                     src={screen.src}
                   />
-                  <div className="text-center max-w-[220px] sm:max-w-[240px]">
+                  <div className="text-center max-w-[260px] sm:max-w-[280px]">
                     <p className="text-sm font-semibold text-gym-text">
                       {screen.title}
                     </p>
