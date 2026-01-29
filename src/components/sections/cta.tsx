@@ -6,9 +6,9 @@ import { ArrowRight, Dumbbell } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="relative py-24 sm:py-32 bg-muted/30">
+    <section id="download" className="relative py-24 sm:py-32 bg-gym-card/30">
       <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-border/50 bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 p-8 sm:p-16 text-center text-white">
+        <div className="relative overflow-hidden rounded-3xl border border-gym-border/50 bg-gradient-to-br from-gym-primary via-gym-primary-light to-gym-accent p-8 sm:p-16 text-center text-white">
           {/* Background decoration */}
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
@@ -24,14 +24,14 @@ export function CTA() {
 
             <BlurFade delay={0.1}>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Start your fitness journey today
+                Start tracking your workouts today
               </h2>
             </BlurFade>
 
             <BlurFade delay={0.2}>
-              <p className="mt-4 text-base sm:text-lg text-violet-100 max-w-xl mx-auto">
-                Join 50,000+ athletes who are crushing their goals with Gym
-                Track Pro. Download free and see the difference.
+              <p className="mt-4 text-base sm:text-lg text-indigo-100 max-w-xl mx-auto">
+                Join thousands of lifters who train smarter with GymTrack Pro.
+                Free to download, no account required.
               </p>
             </BlurFade>
 
@@ -39,9 +39,9 @@ export function CTA() {
               <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
                   size="lg"
-                  className="bg-white text-violet-700 hover:bg-white/90 shadow-lg gap-2"
+                  className="bg-white text-gym-primary hover:bg-white/90 shadow-lg gap-2 font-semibold"
                 >
-                  Download Free
+                  Download on App Store
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button
@@ -49,15 +49,14 @@ export function CTA() {
                   variant="outline"
                   className="border-white/30 text-white hover:bg-white/10 bg-transparent"
                 >
-                  View Demo
+                  Learn More
                 </Button>
               </div>
             </BlurFade>
 
             <BlurFade delay={0.4}>
-              <p className="mt-6 text-xs text-violet-200">
-                Free forever · No credit card required · Available on iOS &
-                Android
+              <p className="mt-6 text-xs text-indigo-200">
+                Free forever &middot; No account required &middot; iOS 17+
               </p>
             </BlurFade>
           </div>

@@ -8,39 +8,39 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "Is Gym Track Pro really free to use?",
+    question: "Is GymTrack Pro free to use?",
     answer:
-      "Yes! The free plan includes basic workout logging, a rest timer, exercise library access, and weekly summaries. You can track your workouts without ever paying a dime. Upgrade to Pro only if you want advanced analytics, AI coaching, and cloud sync.",
+      "Yes! The free tier includes full workout logging, 7 built-in split templates (PPL, Upper/Lower, Bro Split, Full Body, Arnold Split, and hybrids), rest timer with push notifications, basic progress charts, workout streaks, and automatic PR detection. No account required. Upgrade to Pro only if you want advanced analytics, custom splits, cloud sync, and Apple Watch support.",
   },
   {
     question: "Does it work offline?",
     answer:
-      "Absolutely. You can log your entire workout offline. All data syncs automatically when you reconnect to the internet. Your workout is never interrupted by poor gym Wi-Fi.",
+      "100% offline-first. GymTrack Pro uses SwiftData for on-device storage — no internet connection is needed to log your workouts. Your data lives on your iPhone. Pro subscribers get optional CloudKit sync to keep data across devices.",
   },
   {
-    question: "What devices are supported?",
+    question: "What workout splits are available?",
     answer:
-      "Gym Track Pro is available on iOS and Android. Pro subscribers also get Apple Watch and Wear OS support, plus a web dashboard for reviewing your stats on a larger screen.",
+      "The free tier includes 7 built-in templates: Push/Pull/Legs (PPL), Upper/Lower, Bro Split, Full Body, Arnold Split, UL-PPL hybrid, and PPL-UL hybrid. Pro subscribers can build unlimited custom splits with the split builder, assigning any exercises to any day.",
   },
   {
-    question: "How does the AI coach work?",
+    question: "How does the 1RM estimation work?",
     answer:
-      "Our AI analyzes your workout history, recovery patterns, and goals to generate personalized workout plans. It suggests optimal weights, reps, and rest periods for each session. The more you use it, the smarter it gets.",
+      "GymTrack Pro uses the Epley formula: weight × (1 + reps / 30). Every time you log a set, the app calculates your estimated one-rep max for that exercise and tracks it over time. You get an instant notification when you hit a new personal record.",
   },
   {
-    question: "Can I import data from other apps?",
+    question: "What devices does it support?",
     answer:
-      "Yes! We support importing workout data from Strong, JEFIT, Hevy, and several other popular fitness apps. You can also import CSV files. Your fitness history is never lost.",
+      "GymTrack Pro is built 100% native for iOS 17+ using SwiftUI and SwiftData. It runs on iPhone. Apple Watch companion app is planned for a future release (Phase 3). There are no plans for Android at this time.",
   },
   {
     question: "Is my data private and secure?",
     answer:
-      "Your privacy is our top priority. All data is encrypted in transit and at rest. We never sell or share your personal fitness data with third parties. You can export or delete your data at any time.",
+      "Your data stays on your device by default. No account is required to use the app. Phase 1 has zero external dependencies — no analytics, no tracking, no data collection. Phase 3 will add optional CloudKit sync, which is encrypted and managed by Apple.",
   },
   {
-    question: "Can I cancel my subscription anytime?",
+    question: "Can I switch between kg and lbs?",
     answer:
-      "Yes, you can cancel your Pro or Team subscription at any time. You'll continue to have access until the end of your billing period, and you'll never be charged again after cancellation.",
+      "Yes. You choose your preferred weight unit (kg or lbs) during onboarding, and you can change it anytime in Profile settings. All weight displays, suggestions, and charts update automatically when you switch.",
   },
 ];
 
@@ -57,15 +57,17 @@ function FaqItem({
 
   return (
     <BlurFade delay={0.05 * index}>
-      <div className="border-b border-border/50">
+      <div className="border-b border-gym-border/50">
         <button
           onClick={() => setOpen(!open)}
           className="flex w-full items-center justify-between py-5 text-left"
         >
-          <span className="text-sm font-medium pr-4">{question}</span>
+          <span className="text-sm font-medium pr-4 text-gym-text">
+            {question}
+          </span>
           <ChevronDown
             className={cn(
-              "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
+              "h-4 w-4 shrink-0 text-gym-text-muted transition-transform duration-200",
               open && "rotate-180"
             )}
           />
@@ -79,7 +81,7 @@ function FaqItem({
               transition={{ duration: 0.2 }}
               className="overflow-hidden"
             >
-              <p className="pb-5 text-sm text-muted-foreground leading-relaxed">
+              <p className="pb-5 text-sm text-gym-text-muted leading-relaxed">
                 {answer}
               </p>
             </motion.div>
@@ -96,24 +98,24 @@ export function FAQ() {
       <div className="container mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center mb-16">
           <BlurFade>
-            <p className="text-sm font-medium text-violet-500 mb-3">FAQ</p>
+            <p className="text-sm font-medium text-gym-primary mb-3">FAQ</p>
           </BlurFade>
           <BlurFade delay={0.1}>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gym-text">
               Frequently asked{" "}
-              <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-gym-primary to-gym-accent bg-clip-text text-transparent">
                 questions
               </span>
             </h2>
           </BlurFade>
           <BlurFade delay={0.2}>
-            <p className="mt-4 text-base sm:text-lg text-muted-foreground">
-              Everything you need to know about Gym Track Pro.
+            <p className="mt-4 text-base sm:text-lg text-gym-text-muted">
+              Everything you need to know about GymTrack Pro.
             </p>
           </BlurFade>
         </div>
 
-        <div className="rounded-2xl border border-border/50 bg-card px-6">
+        <div className="rounded-2xl border border-gym-border/50 bg-gym-card px-6">
           {faqs.map((faq, index) => (
             <FaqItem
               key={faq.question}

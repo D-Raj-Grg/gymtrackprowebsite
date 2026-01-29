@@ -6,52 +6,58 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Marcus Chen",
+    name: "Ben T.",
+    role: "Beginner · 3 months",
+    content:
+      "I had no idea what workout split to follow when I started. The onboarding let me pick PPL and it set everything up for me. I just show up and follow the plan.",
+    rating: 5,
+    avatar: "BT",
+    gradient: "from-gym-primary to-gym-accent",
+  },
+  {
+    name: "Irene K.",
+    role: "Intermediate · 2 years",
+    content:
+      "The progress charts are addictive. Watching my bench 1RM trend upward week by week keeps me showing up. PR notifications make my day every time.",
+    rating: 5,
+    avatar: "IK",
+    gradient: "from-gym-success to-gym-accent",
+  },
+  {
+    name: "Alex M.",
+    role: "Advanced · 5 years",
+    content:
+      "Finally an app that doesn't try to do everything. No bloat, no social feed, no AI gimmicks. Just clean logging, volume analytics, and a custom split builder. Exactly what I needed.",
+    rating: 5,
+    avatar: "AM",
+    gradient: "from-gym-primary-light to-gym-primary",
+  },
+  {
+    name: "Rachel S.",
+    role: "Returning Lifter",
+    content:
+      "I took a year off and was dreading starting over. The app made it easy to rebuild my routine. Seeing my old PRs as targets to chase again is incredibly motivating.",
+    rating: 5,
+    avatar: "RS",
+    gradient: "from-gym-streak-start to-gym-streak-end",
+  },
+  {
+    name: "Marcus D.",
     role: "Powerlifter · 3 years",
     content:
-      "Gym Track Pro completely changed how I train. The progressive overload tracking alone has helped me add 50lbs to my squat in 6 months.",
+      "The Epley 1RM estimation is spot-on for my training. Progressive overload tracking with auto-suggestions means I never have to think about what weight to put on next.",
     rating: 5,
-    avatar: "MC",
+    avatar: "MD",
+    gradient: "from-gym-warning to-gym-streak-start",
   },
   {
-    name: "Sarah Williams",
-    role: "CrossFit Athlete",
+    name: "Priya N.",
+    role: "CrossFit · 1 year",
     content:
-      "The AI coach is incredible. It suggested a deload week right when I was starting to feel worn out. It's like having a personal trainer in my pocket.",
+      "Offline-first is a game changer — my gym has terrible WiFi. I log supersets back-to-back in seconds. The rest timer with haptic feedback is perfect between rounds.",
     rating: 5,
-    avatar: "SW",
-  },
-  {
-    name: "James Rodriguez",
-    role: "Bodybuilder · Competitor",
-    content:
-      "I've tried every gym app out there. This is the only one that actually helps me track volume properly across muscle groups. The analytics are next level.",
-    rating: 5,
-    avatar: "JR",
-  },
-  {
-    name: "Emma Thompson",
-    role: "Fitness Coach",
-    content:
-      "I recommend Gym Track Pro to all my clients. The ability to share workout plans and track their progress remotely has been a game-changer for my coaching.",
-    rating: 5,
-    avatar: "ET",
-  },
-  {
-    name: "David Park",
-    role: "Olympic Weightlifter",
-    content:
-      "The exercise library with video demonstrations is fantastic. Plus, the rest timer and plate calculator save me so much time during sessions.",
-    rating: 5,
-    avatar: "DP",
-  },
-  {
-    name: "Lisa Anderson",
-    role: "Beginner · 6 months",
-    content:
-      "As someone new to the gym, this app made everything less intimidating. The guided workouts and progress photos keep me motivated every day.",
-    rating: 5,
-    avatar: "LA",
+    avatar: "PN",
+    gradient: "from-gym-accent to-gym-success",
   },
 ];
 
@@ -61,22 +67,22 @@ export function Testimonials() {
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center mb-16">
           <BlurFade>
-            <p className="text-sm font-medium text-violet-500 mb-3">
+            <p className="text-sm font-medium text-gym-primary mb-3">
               Testimonials
             </p>
           </BlurFade>
           <BlurFade delay={0.1}>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Loved by{" "}
-              <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                50,000+ lifters
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gym-text">
+              Trusted by lifters at{" "}
+              <span className="bg-gradient-to-r from-gym-primary to-gym-accent bg-clip-text text-transparent">
+                every level
               </span>
             </h2>
           </BlurFade>
           <BlurFade delay={0.2}>
-            <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              From beginners to competitive athletes, hear what our community
-              has to say about their experience.
+            <p className="mt-4 text-base sm:text-lg text-gym-text-muted max-w-2xl mx-auto">
+              From first-time gym goers to competitive powerlifters — hear what
+              our community has to say.
             </p>
           </BlurFade>
         </div>
@@ -86,26 +92,30 @@ export function Testimonials() {
             <BlurFade key={testimonial.name} delay={0.1 * index}>
               <motion.div
                 whileHover={{ y: -2 }}
-                className="break-inside-avoid rounded-2xl border border-border/50 bg-card p-6"
+                className="break-inside-avoid rounded-2xl border border-gym-border/50 bg-gym-card p-6"
               >
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 fill-yellow-500 text-yellow-500"
+                      className="h-4 w-4 fill-gym-warning text-gym-warning"
                     />
                   ))}
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm text-gym-text-muted leading-relaxed mb-4">
                   &ldquo;{testimonial.content}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white">
+                  <div
+                    className={`h-10 w-10 rounded-full bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center text-xs font-bold text-white`}
+                  >
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <p className="text-sm font-medium">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-sm font-medium text-gym-text">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-xs text-gym-text-muted">
                       {testimonial.role}
                     </p>
                   </div>
