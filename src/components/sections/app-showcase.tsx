@@ -73,7 +73,7 @@ export function AppShowcase() {
         </div>
 
         {/* Desktop: Fan layout */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <div className="relative flex items-end justify-center gap-[-20px] pt-12 pb-8">
             {/* Glow behind center phone */}
             <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[500px] bg-gradient-to-r from-gym-primary/20 via-gym-primary-light/15 to-gym-accent/20 blur-[100px] rounded-full" />
@@ -144,8 +144,8 @@ export function AppShowcase() {
           </div>
         </div>
 
-        {/* Mobile: Horizontal scroll */}
-        <div className="md:hidden">
+        {/* Mobile + Tablet: Horizontal scroll */}
+        <div className="lg:hidden">
           <div className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
             {screens.map((screen, index) => (
               <BlurFade key={screen.title} delay={0.1 * index}>
