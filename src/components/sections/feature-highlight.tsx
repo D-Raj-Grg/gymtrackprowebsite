@@ -68,10 +68,10 @@ const features = [
 
 export function FeatureHighlight() {
   return (
-    <section aria-label="Feature highlights" className="relative py-24 sm:py-32">
+    <section aria-label="Feature highlights" className="relative py-16 sm:py-24 lg:py-32">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         {/* Section header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           <BlurFade>
             <p className="text-sm font-medium uppercase tracking-wider text-gym-primary mb-3">
               Features
@@ -85,16 +85,14 @@ export function FeatureHighlight() {
         </div>
 
         {/* Feature rows */}
-        <div className="space-y-32 sm:space-y-40">
+        <div className="space-y-20 sm:space-y-32 lg:space-y-40">
           {features.map((feature, index) => {
             const isReversed = index % 2 !== 0;
 
             return (
               <div
                 key={feature.title}
-                className={`grid gap-12 lg:grid-cols-2 lg:gap-16 items-center ${
-                  isReversed ? "" : ""
-                }`}
+                className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16 items-center"
               >
                 {/* Phone */}
                 <BlurFade
@@ -103,7 +101,7 @@ export function FeatureHighlight() {
                     isReversed ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <div className="relative">
+                  <div className="relative w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px] mx-auto">
                     {/* Subtle glow */}
                     <div className="absolute inset-0 -z-10 scale-90 opacity-30">
                       <div
@@ -111,7 +109,7 @@ export function FeatureHighlight() {
                       />
                     </div>
                     <Iphone
-                      className="w-[260px] sm:w-[300px] lg:w-[340px]"
+                      className="w-full"
                       src={feature.src}
                     />
                   </div>
@@ -132,7 +130,7 @@ export function FeatureHighlight() {
                     </div>
                   </BlurFade>
                   <BlurFade delay={0.1}>
-                    <h3 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-gym-text leading-tight">
+                    <h3 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl text-gym-text leading-tight">
                       {feature.title}{" "}
                       <span
                         className={`bg-gradient-to-r ${feature.accentGradient} bg-clip-text text-transparent`}

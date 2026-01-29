@@ -73,7 +73,7 @@ export function Hero() {
             </BlurFade>
 
             <BlurFade delay={0.4}>
-              <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-gym-text-muted">
+              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-gym-text-muted">
                 <div className="flex items-center gap-2">
                   <Dumbbell className="h-4 w-4 text-gym-primary" />
                   <span>PPL · Upper/Lower · Bro Split</span>
@@ -92,14 +92,14 @@ export function Hero() {
 
           {/* Right - Phone mockup with real app screenshot */}
           <BlurFade delay={0.3} className="flex justify-center lg:justify-end">
-            <div className="relative">
+            <div className="relative w-full max-w-[264px] sm:max-w-[300px] mx-auto lg:mx-0">
               {/* Glow behind phone */}
               <div className="absolute inset-0 -z-10 scale-110">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-gym-primary/30 via-gym-primary-light/20 to-gym-accent/30 blur-3xl" />
               </div>
 
               <Iphone
-                className="w-[264px] sm:w-[300px]"
+                className="w-full"
                 src="/images/screens/dashboard.png"
               />
 

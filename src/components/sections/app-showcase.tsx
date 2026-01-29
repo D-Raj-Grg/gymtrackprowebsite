@@ -39,9 +39,9 @@ const screens = [
 
 export function AppShowcase() {
   return (
-    <section aria-label="App screen showcase" className="relative py-24 sm:py-32 overflow-hidden">
+    <section aria-label="App screen showcase" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <BlurFade>
             <p className="text-sm font-medium text-gym-primary mb-3">
               App Screens
@@ -64,19 +64,19 @@ export function AppShowcase() {
         </div>
 
         {/* Horizontal scroll of phone screens */}
-        <div className="flex gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 lg:justify-center lg:flex-wrap">
+        <div className="flex gap-4 sm:gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0 lg:justify-center lg:flex-wrap">
           {screens.map((screen, index) => (
             <BlurFade key={screen.title} delay={0.1 * index}>
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="snap-center shrink-0 flex flex-col items-center gap-4"
+                className="snap-center shrink-0 flex flex-col items-center gap-3 sm:gap-4"
               >
                 <Iphone
-                  className="w-[200px] sm:w-[220px]"
+                  className="w-[160px] sm:w-[200px] md:w-[220px]"
                   src={screen.src}
                 />
-                <div className="text-center max-w-[200px]">
+                <div className="text-center max-w-[160px] sm:max-w-[200px]">
                   <p className="text-sm font-semibold text-gym-text">
                     {screen.title}
                   </p>
