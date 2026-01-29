@@ -68,7 +68,7 @@ const features = [
 
 export function FeatureHighlight() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section aria-label="Feature highlights" className="relative py-24 sm:py-32">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         {/* Section header */}
         <div className="text-center mb-20">

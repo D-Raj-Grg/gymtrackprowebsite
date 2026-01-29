@@ -63,7 +63,7 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="relative py-24 sm:py-32 bg-gym-card/30">
+    <section aria-label="Benefits of GymTrack Pro" className="relative py-24 sm:py-32 bg-gym-card/30">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center mb-16">
           <BlurFade>

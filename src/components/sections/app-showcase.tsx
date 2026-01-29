@@ -40,7 +40,7 @@ const screens = [
 
 export function AppShowcase() {
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden">
+    <section aria-label="App screen showcase" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center mb-16">
           <BlurFade>

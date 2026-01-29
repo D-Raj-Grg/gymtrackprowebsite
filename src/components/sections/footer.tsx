@@ -15,8 +15,8 @@ const footerLinks = {
     { label: "Rest Timer", href: "#features" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
   ],
   Social: [
     { label: "Twitter", href: "#" },
@@ -27,7 +27,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-gym-border/40 bg-gym-background">
+    <footer aria-label="Site footer" className="border-t border-gym-border/40 bg-gym-background">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 sm:py-16">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">

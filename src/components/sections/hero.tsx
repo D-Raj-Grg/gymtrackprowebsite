@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 pb-24 sm:pt-24 sm:pb-32">
+    <section aria-label="Hero — Train Smarter, Track Effortlessly" className="relative overflow-hidden pt-16 pb-24 sm:pt-24 sm:pb-32">
       {/* Background gradient - Indigo to Cyan like app */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-b from-gym-primary/20 via-gym-accent/10 to-transparent blur-3xl" />
