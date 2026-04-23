@@ -44,12 +44,14 @@ export function Header() {
 
         {/* CTA + Mobile toggle */}
         <div className="flex items-center gap-3">
-          <Link
-            href="#download"
+          <a
+            href="https://apps.apple.com/us/app/gymtrack-pro-lifter-log/id6762596384"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:inline-flex h-9 items-center rounded-lg bg-gradient-to-r from-gym-primary to-gym-primary-light px-4 text-sm font-medium text-white transition-opacity hover:opacity-90"
           >
-            Download App
-          </Link>
+            Download on App Store
+          </a>
           <button
             className="md:hidden p-2 text-gym-text-muted hover:text-gym-text"
             onClick={() => setIsOpen(!isOpen)}
@@ -85,13 +87,15 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="#download"
+              <a
+                href="https://apps.apple.com/us/app/gymtrack-pro-lifter-log/id6762596384"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="mt-2 flex h-10 items-center justify-center rounded-lg bg-gradient-to-r from-gym-primary to-gym-primary-light text-sm font-medium text-white"
               >
-                Download App
-              </Link>
+                Download on App Store
+              </a>
             </div>
           </motion.nav>
         )}

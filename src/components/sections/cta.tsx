@@ -39,17 +39,25 @@ export function CTA() {
               <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
                   size="lg"
+                  asChild
                   className="bg-white text-gym-primary hover:bg-white/90 shadow-lg gap-2 font-semibold"
                 >
-                  Download on App Store
-                  <ArrowRight className="h-4 w-4" />
+                  <a
+                    href="https://apps.apple.com/us/app/gymtrack-pro-lifter-log/id6762596384"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download on App Store
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white/30 text-white hover:bg-white/10 bg-transparent"
+                  asChild
                 >
-                  Learn More
+                  <a href="#features">Learn More</a>
                 </Button>
               </div>
             </BlurFade>

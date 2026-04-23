@@ -6,9 +6,12 @@ const footerLinks = {
     { label: "Features", href: "#features" },
     { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
-    { label: "Download", href: "#download" },
+    {
+      label: "Download on App Store",
+      href: "https://apps.apple.com/us/app/gymtrack-pro-lifter-log/id6762596384",
+    },
   ],
-  App: [
+  "The App": [
     { label: "Workout Splits", href: "#features" },
     { label: "Progress Charts", href: "#how-it-works" },
     { label: "Exercise Library", href: "#features" },
@@ -53,16 +56,30 @@ export function Footer() {
                   {category}
                 </h4>
                 <ul className="space-y-2.5">
-                  {links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-gym-text-muted hover:text-gym-text transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {links.map((link) => {
+                    const isExternal = link.href.startsWith("http");
+                    return (
+                      <li key={link.label}>
+                        {isExternal ? (
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-gym-text-muted hover:text-gym-text transition-colors"
+                          >
+                            {link.label}
+                          </a>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            className="text-sm text-gym-text-muted hover:text-gym-text transition-colors"
+                          >
+                            {link.label}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

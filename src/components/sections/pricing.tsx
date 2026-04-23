@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+const APP_STORE_URL =
+  "https://apps.apple.com/us/app/gymtrack-pro-lifter-log/id6762596384";
+
 const plans = [
   {
     name: "Free",
@@ -22,6 +25,7 @@ const plans = [
       "Offline-first — no account needed",
     ],
     cta: "Download Free",
+    href: APP_STORE_URL,
     popular: false,
   },
   {
@@ -40,6 +44,7 @@ const plans = [
       "Priority support",
     ],
     cta: "Start Free Trial",
+    href: APP_STORE_URL,
     popular: true,
   },
 ];
@@ -127,8 +132,15 @@ export function Pricing() {
                   )}
                   variant={plan.popular ? "default" : "outline"}
                   size="lg"
+                  asChild
                 >
-                  {plan.cta}
+                  <a
+                    href={plan.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {plan.cta}
+                  </a>
                 </Button>
               </motion.div>
             </BlurFade>
