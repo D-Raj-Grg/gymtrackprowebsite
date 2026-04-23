@@ -45,8 +45,8 @@
   --color-gym-background: #0F172A;
   --color-gym-card: #1E293B;
   --color-gym-card-hover: #334155;
-  --color-gym-primary: #6366F1;
-  --color-gym-primary-light: #818CF8;
+  --color-gym-primary: #F97316;
+  --color-gym-primary-light: #FB923C;
   --color-gym-accent: #22D3EE;
   --color-gym-success: #10B981;
   --color-gym-success-2: #34D399;
@@ -68,7 +68,7 @@
   --card-foreground: #F8FAFC;
   --popover: #1E293B;
   --popover-foreground: #F8FAFC;
-  --primary: #6366F1;
+  --primary: #F97316;
   --primary-foreground: #F8FAFC;
   --secondary: #334155;
   --secondary-foreground: #F8FAFC;
@@ -80,20 +80,20 @@
   --destructive-foreground: #F8FAFC;
   --border: #334155;
   --input: #334155;
-  --ring: #6366F1;
-  --chart-1: #6366F1;
+  --ring: #F97316;
+  --chart-1: #F97316;
   --chart-2: #22D3EE;
   --chart-3: #10B981;
   --chart-4: #F59E0B;
-  --chart-5: #818CF8;
+  --chart-5: #FB923C;
   --sidebar: #0F172A;
   --sidebar-foreground: #F8FAFC;
-  --sidebar-primary: #6366F1;
+  --sidebar-primary: #F97316;
   --sidebar-primary-foreground: #F8FAFC;
   --sidebar-accent: #1E293B;
   --sidebar-accent-foreground: #F8FAFC;
   --sidebar-border: #334155;
-  --sidebar-ring: #6366F1;
+  --sidebar-ring: #F97316;
   --radius: 0.75rem;
 
   /* ---------- GymTrack Pro Design Tokens (ported from iOS) ---------- */
@@ -104,8 +104,8 @@
   --gym-card-hover: #334155;
 
   /* Primary / Accent */
-  --gym-primary:       #6366F1;
-  --gym-primary-light: #818CF8;
+  --gym-primary:       #F97316;
+  --gym-primary-light: #FB923C;
   --gym-accent:        #22D3EE;
 
   /* Semantic */
@@ -126,7 +126,7 @@
   --gym-border: #334155;
 
   /* Gradients */
-  --gym-gradient:         linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+  --gym-gradient:         linear-gradient(135deg, #F97316 0%, #FB923C 100%);
   --gym-gradient-success: linear-gradient(135deg, #10B981 0%, #34D399 100%);
   --gym-gradient-streak:  linear-gradient(135deg, #F97316 0%, #EF4444 100%);
 
@@ -229,8 +229,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6); }
 }
 
 @utility animate-gradient {
