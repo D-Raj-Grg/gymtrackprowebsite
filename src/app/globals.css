@@ -41,7 +41,7 @@
   --radius-xl: calc(var(--radius) + 4px);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  /* GymTrack Pro App Colors */
+  /* GymTrack Pro Website Colors */
   --color-gym-background: #0F172A;
   --color-gym-card: #1E293B;
   --color-gym-card-hover: #334155;
@@ -49,6 +49,7 @@
   --color-gym-primary-light: #818CF8;
   --color-gym-accent: #22D3EE;
   --color-gym-success: #10B981;
+  --color-gym-success-2: #34D399;
   --color-gym-warning: #F59E0B;
   --color-gym-error: #EF4444;
   --color-gym-text: #F8FAFC;
@@ -56,6 +57,8 @@
   --color-gym-border: #334155;
   --color-gym-streak-start: #F97316;
   --color-gym-streak-end: #EF4444;
+  --color-gym-streak-1: #F97316;
+  --color-gym-streak-2: #EF4444;
 }
 
 :root {
@@ -92,6 +95,117 @@
   --sidebar-border: #334155;
   --sidebar-ring: #6366F1;
   --radius: 0.75rem;
+
+  /* ---------- GymTrack Pro Design Tokens (ported from iOS) ---------- */
+
+  /* Backgrounds / Surfaces */
+  --gym-background: #0F172A;
+  --gym-card:       #1E293B;
+  --gym-card-hover: #334155;
+
+  /* Primary / Accent */
+  --gym-primary:       #6366F1;
+  --gym-primary-light: #818CF8;
+  --gym-accent:        #22D3EE;
+
+  /* Semantic */
+  --gym-success:   #10B981;
+  --gym-success-2: #34D399;
+  --gym-warning:   #F59E0B;
+  --gym-error:     #EF4444;
+
+  /* Streak */
+  --gym-streak-1: #F97316;
+  --gym-streak-2: #EF4444;
+
+  /* Text */
+  --gym-text:       #F8FAFC;
+  --gym-text-muted: #94A3B8;
+
+  /* Border */
+  --gym-border: #334155;
+
+  /* Gradients */
+  --gym-gradient:         linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+  --gym-gradient-success: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+  --gym-gradient-streak:  linear-gradient(135deg, #F97316 0%, #EF4444 100%);
+
+  /* Spacing */
+  --space-xs:        4px;
+  --space-sm:        8px;
+  --space-component: 12px;
+  --space-standard:  16px;
+  --space-card:      20px;
+  --space-section:   24px;
+  --space-lg:        32px;
+  --space-xl:        48px;
+
+  /* Radius */
+  --radius-btn:     12px;
+  --radius-input:   12px;
+  --radius-card:    16px;
+  --radius-card-lg: 20px;
+  --radius-full:    9999px;
+
+  /* Animation */
+  --dur-quick:    150ms;
+  --dur-standard: 250ms;
+  --dur-slow:     350ms;
+  --ease-spring:  cubic-bezier(0.32, 0.72, 0.35, 1.08);
+
+  /* Shadows — for floating modals, toasts, and overlays */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.32);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.48);
+
+  /* Typography — Family */
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                  "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-monospace: ui-monospaced, "SF Mono", Menlo, Consolas,
+                    "Liberation Mono", monospace;
+
+  /* Typography — Scale (iPhone default / non-scaled) */
+  --type-largeTitle-size:   34px;
+  --type-largeTitle-weight: 700;
+  --type-largeTitle-line:   41px;
+
+  --type-title-size:   28px;
+  --type-title-weight: 700;
+  --type-title-line:   34px;
+
+  --type-title2-size:   22px;
+  --type-title2-weight: 700;
+  --type-title2-line:   28px;
+
+  --type-title3-size:   20px;
+  --type-title3-weight: 600;
+  --type-title3-line:   25px;
+
+  --type-headline-size:   17px;
+  --type-headline-weight: 600;
+  --type-headline-line:   22px;
+
+  --type-body-size:   17px;
+  --type-body-weight: 400;
+  --type-body-line:   22px;
+
+  --type-subheadline-size:   15px;
+  --type-subheadline-weight: 400;
+  --type-subheadline-line:   20px;
+
+  --type-footnote-size:   13px;
+  --type-footnote-weight: 400;
+  --type-footnote-line:   18px;
+
+  --type-caption-size:   12px;
+  --type-caption-weight: 400;
+  --type-caption-line:   16px;
+
+  --type-caption2-size:   11px;
+  --type-caption2-weight: 400;
+  --type-caption2-line:   13px;
 }
 
 @layer base {
@@ -137,4 +251,27 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* ---------- Role-based utility classes (mirrors iOS semantic tokens) ---------- */
+.text-muted   { color: var(--gym-text-muted); }
+.text-primary { color: var(--gym-primary); }
+.text-accent  { color: var(--gym-accent); }
+.text-success { color: var(--gym-success); }
+.text-warning { color: var(--gym-warning); }
+.text-error   { color: var(--gym-error); }
+
+.bg-gym-background { background: var(--gym-background); }
+.bg-gym-card       { background: var(--gym-card); }
+.bg-gym-card-hover { background: var(--gym-card-hover); }
+
+/* Numeric display — weights, reps, timers */
+.numeric {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+.numeric-mono {
+  font-family: var(--font-monospace);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
 }

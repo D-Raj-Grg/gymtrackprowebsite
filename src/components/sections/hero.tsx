@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 export function Hero() {
   return (
     <section aria-label="Hero — Train Smarter, Track Effortlessly" className="relative overflow-hidden pt-16 pb-24 sm:pt-24 sm:pb-32">
-      {/* Background gradient - Indigo to Cyan like app */}
+      {/* Background gradient — Indigo to Cyan, matching the iOS app */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-gradient-to-b from-gym-primary/20 via-gym-accent/10 to-transparent blur-3xl" />
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-t from-gym-accent/10 to-transparent blur-3xl" />
@@ -57,17 +57,25 @@ export function Hero() {
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button
                   size="lg"
+                  asChild
                   className="gap-2 bg-gradient-to-r from-gym-primary to-gym-primary-light hover:opacity-90 text-white border-0 shadow-lg shadow-gym-primary/25"
                 >
-                  Download Free
-                  <ArrowRight className="h-4 w-4" />
+                  <a
+                    href="https://apps.apple.com/us/app/gymtrack-pro-lifter-log/id6762596384"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download Free
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="gap-2 border-gym-border text-gym-text hover:bg-gym-card"
+                  asChild
                 >
-                  See How It Works
+                  <a href="#how-it-works">See How It Works</a>
                 </Button>
               </div>
             </BlurFade>
